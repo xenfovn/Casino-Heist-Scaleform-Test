@@ -313,16 +313,16 @@ RegisterCommand('EnterBoard2', function()
             selected2 = selected2 - 1
             print('Selecting #:'..selected2)
             CallScaleformMethod(scaleform2, 'SET_CURRENT_SELECTION', selected2)
-        elseif IsControlJustPressed(0, 191) and not CantSelect[selected2] then -- Enter
-            if selected2 == 10 or 11 or 12 then
-                CallScaleformMethod(scaleform2, 'SET_CREW_MEMBER_HIRED', selected2, true)
-                if selected2 == 10 then
-                    CallScaleformMethod(scaleform2, 'SET_BUTTON_VISIBLE', 5, true)
-                elseif selected2 == 11 then
-                    CallScaleformMethod(scaleform2, 'SET_BUTTON_VISIBLE', 6, true)
-                elseif selected2 == 12 then
-                    CallScaleformMethod(scaleform2, 'SET_BUTTON_VISIBLE', 7, true)
-                end
+        elseif IsControlJustPressed(0, 191) then -- Enter
+            if selected2 == 10 then
+                CallScaleformMethod(scaleform2, 'SET_CREW_MEMBER_HIRED', 10, true)
+                CallScaleformMethod(scaleform2, 'SET_BUTTON_VISIBLE', 5, true)
+            elseif selected2 == 11 then
+                CallScaleformMethod(scaleform2, 'SET_CREW_MEMBER_HIRED', 11, true)
+                CallScaleformMethod(scaleform2, 'SET_BUTTON_VISIBLE', 6, true)
+            elseif selected2 == 12 then
+                CallScaleformMethod(scaleform2, 'SET_CREW_MEMBER_HIRED', 12, true)
+                CallScaleformMethod(scaleform2, 'SET_BUTTON_VISIBLE', 7, true)
             else
                 CallScaleformMethod(scaleform2, 'SET_TICK', selected2, true)
             end
